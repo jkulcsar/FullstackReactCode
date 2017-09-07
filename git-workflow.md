@@ -1,4 +1,4 @@
-We subscribe to the [Git Featrue Branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), briefly described in that link.  
+We subscribe to the [Git Feature Branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), briefly described in that link.  
 
 In practice, it works as follows:  
 
