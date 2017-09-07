@@ -19,3 +19,9 @@ If you want to rename the current branch, you can do:
 
 `git branch -m <newname>`
 A way to remember this, is -m is for "move" (or mv), which is how you rename files.
+
+## To create new node.js based Heroku apps
+Use the following command;
+`heroku create --buildpack https://github.com/heroku/heroku-buildpack-nodejs.git`
+
+This sets up the correct build chain on the Heroku server side; does nothing in the local repository.
