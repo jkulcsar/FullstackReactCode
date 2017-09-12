@@ -25,3 +25,6 @@ Use the following command;
 `heroku create --buildpack https://github.com/heroku/heroku-buildpack-nodejs.git`
 
 This sets up the correct build chain on the Heroku server side; does nothing in the local repository.
+
+## Server environments
+Section 6 Lecture 55 explains best why we have two servers in dev (react app server and express), how to make them work together in dev and how does this work in production: in prod there is only one server, express, running, serving up the main bundle of js file to which the entire react app is shrinked down using npm run build (and it puts them in the /build subfolder).
