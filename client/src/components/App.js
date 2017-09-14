@@ -4,10 +4,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Header from './Header';
+import Landing from './Landing';
 
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
-const Landing = () => <h2>Landing</h2>;
 
 // gotcha: BrowserRouter only expects to have one child (no two divs under BrowserRouter).
 // Header should always be visible, no need to wrap it under a Route.
