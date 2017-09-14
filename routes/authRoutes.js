@@ -6,7 +6,17 @@ module.exports = app => {
 		passport.authenticate('google', { scope: ['profile', 'email'] })
 	);
 
-	app.get('/auth/google/callback', passport.authenticate('google'));
+	// Flow summary: after user comes back from OAuth, passport performs
+	// its internal state and passes on the request back to this function;
+	// this function however has nothing more to do once auth is done,
+	// so it just redirects to another URI.
+	app.get(
+		'/auth/google/callback',
+		passport.authenticate('google'),
+		(req, res) => {
+			res.redirect('/surveys');
+		}
+	);
 
 	app.get('/api/logout', (req, res) => {
 		req.logout();
