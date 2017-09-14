@@ -20,7 +20,11 @@ module.exports = app => {
 
 	app.get('/api/logout', (req, res) => {
 		req.logout();
-		res.send(req.user);
+		// We've been returning the current user, just to prove that in the logout case,
+		// it's empty; the normal flow is that after logout redirect the user to the
+		// root of the app.
+		//res.send(req.user);
+		res.redirect('/');
 	});
 
 	// This will test if the authenticated user is retrieved correctly,
