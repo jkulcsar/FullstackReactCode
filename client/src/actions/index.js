@@ -31,5 +31,16 @@ import { FETCH_USER } from './types';
 // From the response, only 'data' is the actual payload, ignore the other props
 export const fetchUser = () => async dispatch => {
 	const res = await axios.get('/api/current_user');
+
+	// the backend server returns the user
+	dispatch({ type: FETCH_USER, payload: res.data });
+};
+
+export const handleToken = token => async dispatch => {
+	// make a POST request to the backend server
+	const res = await axios.post('/api/stripe', token);
+
+	// the backend server returns the same user however with an updated credit stand
+	// this means we can dispatch the same type of action as when fetching the user
 	dispatch({ type: FETCH_USER, payload: res.data });
 };

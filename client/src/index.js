@@ -22,3 +22,7 @@ ReactDOM.render(
 	</Provider>,
 	document.querySelector('#root')
 );
+
+// check the environment variables:
+// console.log('ENVIRONMENT IS: ', process.env.NODE_ENV);
+// console.log('STRIPE KEY IS: ', process.env.REACT_APP_STRIPE_KEY);

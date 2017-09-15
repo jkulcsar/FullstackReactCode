@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 
 // There is nothing exported from the passport.js file
@@ -17,7 +18,10 @@ mongoose.connect(keys.mongoUri);
 
 const app = express();
 
-// Tell express to use cookies
+// Add the body-parser middleware.
+app.use(bodyParser.json());
+
+// Tell express to use cookies.
 // 30 days long, in milliseconds
 // cookieKey is just a random string, specific to this app; can be anything
 app.use(
@@ -31,6 +35,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
+require('./routes/billingRoutes')(app);
 
 // Heroku will inject in the environment variables the PORT constant
 const PORT = process.env.PORT || 5000;
