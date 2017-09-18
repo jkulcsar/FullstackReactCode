@@ -21,6 +21,11 @@ const app = express();
 // Add the body-parser middleware.
 app.use(bodyParser.json());
 
+// Just like these middlewares, the requireLogin middleware we created
+// could be added here, however since the requireLogin middleware is used
+// only one some routes, being more specific helps clarity; so we register this
+// middleware only in the billingRoutes routes (see billingRoutes).
+
 // Tell express to use cookies.
 // 30 days long, in milliseconds
 // cookieKey is just a random string, specific to this app; can be anything
