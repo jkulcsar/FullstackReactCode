@@ -20,6 +20,15 @@ If you want to rename the current branch, you can do:
 `git branch -m <newname>`
 A way to remember this, is -m is for "move" (or mv), which is how you rename files.
 
+Example:
+```bash
+  850  git branch -m 012-re-create
+  851  git checkout re-create
+  852  git pull origin re-create
+  853  git merge 012-re-create
+  854  git push origin re-create
+```
+
 ## To create new node.js based Heroku apps
 Use the following command;
 `heroku create --buildpack https://github.com/heroku/heroku-buildpack-nodejs.git`

@@ -10,6 +10,10 @@ import reduxThunk from 'redux-thunk';
 import App from './components/App';
 import reducers from './reducers';
 
+// temporary test code:
+import axios from 'axios';
+window.axios = axios;
+
 // create the app-wide state store
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 

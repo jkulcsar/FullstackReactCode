@@ -12,6 +12,7 @@ const keys = require('./config/keys');
 // because of non-existing schema, it's most likely because of a reference to a
 // schema was not yet included.
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 mongoose.connect(keys.mongoUri);
@@ -41,6 +42,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 // only in production environment.
 if (process.env.NODE_ENV === 'production') {
