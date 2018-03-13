@@ -1,14 +1,21 @@
 
+## Start de application
+Simply start the application with the following command:
+```
+npm run dev
+```
+This is wired up in `package.json` to start the server and client concurrently.
+
 ## Merge a branch back into the main line
- - to merge a 'section_name_branch_here' back into the main line (here: re-create) :
-`
+ - to merge a `section_name_branch_here` back into the main line (here: `re-create`) :
+```
 git checkout re-create
 git pull origin re-create
 git merge 'section_name_branch_here'
 git push origin re-create
-`
+```
 
-- after this, just create a new branch based on the updated main line (here: re-create)
+- after this, just create a new branch based on the updated main line (here: `re-create`)
 
 
 ## Rename a branch
