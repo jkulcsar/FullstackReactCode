@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER } from './types';
+import { FETCH_USER, FETCH_SURVEYS } from './types';
 
 // redux-thunk allows us to bend the rule: it gives access to the Redux internal
 // 'dispatch' function, thus enabling us to call 'dispatch' anytime just pass an action
@@ -43,4 +43,20 @@ export const handleToken = token => async dispatch => {
 	// the backend server returns the same user however with an updated credit stand
 	// this means we can dispatch the same type of action as when fetching the user
 	dispatch({ type: FETCH_USER, payload: res.data });
+};
+
+export const submitSurvey = (values, history) => async dispatch => {
+	// make a POST request to the backend server
+	const res = await axios.post('/api/surveys', values);
+
+	// on successfully POST-ing, use the browser history provided by withRouter
+	// to navigate; here: to the root of the Surveys
+	history.push('/surveys');
+	dispatch({ type: FETCH_USER, payload: res.data });
+};
+
+export const fetchSurveys = () => async dispatch => {
+	const res = await axios.get('/api/surveys');
+
+	dispatch({ type: FETCH_SURVEYS, payload: res.data });
 };
