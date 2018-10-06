@@ -30,3 +30,8 @@ ReactDOM.render(
 // check the environment variables:
 console.log('ENVIRONMENT IS: ', process.env.NODE_ENV);
 console.log('STRIPE KEY IS: ', process.env.REACT_APP_STRIPE_KEY);
+
+// localtunnel link to set in SendGrid Mail Settings:
+// https://fjfdifsk8sdksjf3.localtunnel.me/api/surveys/webhooks
+// for production, use:
+// https://glacial-cliffs-31129.herokuapp.com/api/surveys/webhooks
